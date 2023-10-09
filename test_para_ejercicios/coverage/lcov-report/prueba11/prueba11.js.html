@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for prueba2/prueba2.js</title>
+    <title>Code coverage report for prueba11/prueba11.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../prettify.css" />
     <link rel="stylesheet" href="../base.css" />
@@ -19,20 +19,20 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../index.html">All files</a> / <a href="index.html">prueba2</a> prueba2.js</h1>
+        <h1><a href="../index.html">All files</a> / <a href="index.html">prueba11</a> prueba11.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">94.73% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>21/21</span>
+                <span class='fraction'>18/19</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">85.71% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>6/7</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">94.73% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>21/21</span>
+                <span class='fraction'>18/19</span>
             </div>
         
             
@@ -81,49 +81,43 @@
 <a name='L16'></a><a href='#L16'>16</a>
 <a name='L17'></a><a href='#L17'>17</a>
 <a name='L18'></a><a href='#L18'>18</a>
-<a name='L19'></a><a href='#L19'>19</a>
-<a name='L20'></a><a href='#L20'>20</a>
-<a name='L21'></a><a href='#L21'>21</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L19'></a><a href='#L19'>19</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">/* dada una cadena de texto comrpobar si es un palindromo o no retornando true o false seg´´un sea el caso*/
+<span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">/* dado un texto y una busqueda, censurar todas las coincidencias en el texto con [-CENSURADO-], si el texto o busqueda están vacios mostrar no puedes leer el texto y la busqueda en el caso de que ambos parametros no lleguen */
 &nbsp;
-function palindromo(nombre){
-    // convertir el nombre a minusculas
-    const nombreSinMayusculas = nombre.toLowerCase();
+function censurado(texto = false, busqueda){
+    let resultado = '';
 &nbsp;
-    // separar el texto en un array de letras y eliminar mayusculas e invertri el texto
-    const textoSeparado = nombre.toLowerCase().split('').reverse();
-&nbsp;
-    // unir el arrya en string
-    let nombreInvertido = textoSeparado.join('');
-&nbsp;
-    // comprobar si es o no palindromo
-    if(nombreInvertido !== nombreSinMayusculas){
-        return false;
+    if(!texto &amp;&amp; !busqueda)<span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >        resultado = 'No puedes leer el texto y la busqueda';</span>
+    } else if(!texto &amp;&amp; busqueda ){
+        resultado = 'No puedes leer el texto';
+    } else if(texto &amp;&amp; !busqueda){
+        resultado = 'No hay busqueda'
     } else {
-        return true;
+        resultado = texto.replace(new RegExp(busqueda, 'gi'), '[-CENSURADO-]'); 
     };
-}; 
 &nbsp;
-module.exports = palindromo;</pre></td></tr></table></pre>
+    return resultado;
+};
+&nbsp;
+module.exports = censurado;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->

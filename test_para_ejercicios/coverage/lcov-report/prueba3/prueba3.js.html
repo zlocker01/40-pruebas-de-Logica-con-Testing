@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for prueba2/prueba2.js</title>
+    <title>Code coverage report for prueba3/prueba3.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../prettify.css" />
     <link rel="stylesheet" href="../base.css" />
@@ -19,20 +19,20 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../index.html">All files</a> / <a href="index.html">prueba2</a> prueba2.js</h1>
+        <h1><a href="../index.html">All files</a> / <a href="index.html">prueba3</a> prueba3.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>21/21</span>
+                <span class='fraction'>24/24</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>21/21</span>
+                <span class='fraction'>24/24</span>
             </div>
         
             
@@ -83,47 +83,59 @@
 <a name='L18'></a><a href='#L18'>18</a>
 <a name='L19'></a><a href='#L19'>19</a>
 <a name='L20'></a><a href='#L20'>20</a>
-<a name='L21'></a><a href='#L21'>21</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">/* dada una cadena de texto comrpobar si es un palindromo o no retornando true o false seg´´un sea el caso*/
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/* dada una palabra buscarla en una frase y devovler cuantas veces aparece en ella */
 &nbsp;
-function palindromo(nombre){
-    // convertir el nombre a minusculas
-    const nombreSinMayusculas = nombre.toLowerCase();
+function coincidencias(frase, palabra) {
+    // Convertir la palabra y la frase a minúsculas y eliminar signos de puntuación
+    let palabraMinusculas = palabra.toLowerCase();
+    let fraseMinusculas = frase.toLowerCase().replace(/[.,]/g, '');
 &nbsp;
-    // separar el texto en un array de letras y eliminar mayusculas e invertri el texto
-    const textoSeparado = nombre.toLowerCase().split('').reverse();
+    // Dividir la frase en palabras
+    let palabrasFrase = fraseMinusculas.split(' ');
 &nbsp;
-    // unir el arrya en string
-    let nombreInvertido = textoSeparado.join('');
+    let contador = 0;
 &nbsp;
-    // comprobar si es o no palindromo
-    if(nombreInvertido !== nombreSinMayusculas){
-        return false;
-    } else {
-        return true;
+    // Iterar a través de las palabras en la frase
+    for (const palabraFrase of palabrasFrase) {
+        if (palabraFrase === palabraMinusculas) {
+            contador++;
+        };
     };
-}; 
 &nbsp;
-module.exports = palindromo;</pre></td></tr></table></pre>
+    // Devolver el contador de repeticiones
+    return `La palabra "${palabra}" se repite ${contador} veces`;
+};
+&nbsp;
+module.exports = coincidencias;
+&nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
