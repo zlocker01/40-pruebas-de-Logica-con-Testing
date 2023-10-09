@@ -17,3 +17,4 @@ function tablaMultiplicar(numero){
 };
 
 console.log(tablaMultiplicar(5));
+console.log(tablaMultiplicar(10));
